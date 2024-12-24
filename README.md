@@ -1,4 +1,4 @@
-# Travel Blog
+# Travel Sphere
 
 ![Travel Blog Banner](images/frontpagetarvel.png "Welcome to Travel Blog")
 ## Overview
