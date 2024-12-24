@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dandeli Adventure - TravelSphere</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header ng-class="{'scrolled': scrolled}">
+        <nav class="container">
+            <div class="logo">TravelSphere</div>
+            <div class="hamburger" ng-click="toggleMenu()" ng-class="{'active': menuActive}">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="nav-links" ng-class="{'active': menuActive}">
+                <li><a href="index.html" ng-click="smoothScroll('home')">Home</a></li>
+                <li><a href="index.html#stories" ng-click="smoothScroll('stories')">Stories</a></li>
+                <li><a href="index.html#photography" ng-click="smoothScroll('photography')">Photography</a></li>
+                <li><a href="index.html#itineraries" ng-click="smoothScroll('itineraries')">Itineraries</a></li>
+                <li><a href="review.html">Reviews</a></li>
+                <li><a href="index.html#contact" ng-click="smoothScroll('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="dandeli-story" class="background-image" style="background-image: url('images/boat2.jpg');">
+        <div class="container">
+            <h1>Discover the Hidden Gems of Honnavar</h1> 
+            <p><strong>Embark on an unforgettable journey through Honnavar, a coastal paradise blending serene landscapes and thrilling adventures. From the tranquil Sharavathi Backwaters to the enchanting Mangrove Boardwalk and the mesmerizing Apsarkonda Falls, Honnavar is a haven for nature lovers and adventurers alike.</strong></p>
+        </div>
+    </section>
+
+    <section id="places-to-visit">
+        <div class="container">
+            <h2>Places to Visit in Honnavara</h2>
+            <div class="places-grid">
+                <!-- Place 1: Sharavathi Backwaters -->
+                <div class="place-card">
+                    <div class="place-image" style="background-image: url('images/backwaters.jpg');"></div>
+                    <div class="place-content">
+                        <h3>Sharavathi Backwaters</h3>
+                        <p>Unwind amidst the serene beauty of the Sharavathi Backwaters. Whether you choose to cruise, kayak, or simply soak in the tranquil surroundings, this pristine destination promises a rejuvenating escape.</p>
+                    </div>
+                </div>
+
+                <!-- Place 2: Mangrove Board Walk -->
+                <div class="place-card">
+                    <div class="place-image" style="background-image: url('images/BB.webp');"></div>
+                    <div class="place-content">
+                        <h3>Mangrove Board Walk</h3>
+                        <p>Step into a natural wonderland at Honnavar's Mangrove Boardwalk. Meander through lush mangrove forests, observe unique ecosystems, and experience the peaceful harmony of nature at its best.</p>
+                    </div>
+                </div>
+
+                <!-- Place 3: Apsarkonda Falls -->
+                <div class="place-card">
+                    <div class="place-image" style="background-image: url('images/apsar.jpg');"></div>
+                    <div class="place-content">
+                        <h3>Apsarkonda Falls</h3>
+                        <p>Experience the charm of Apsarkonda Falls, where cascading waters offer a refreshing escape amid lush greenery—a must-visit for its serene beauty.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

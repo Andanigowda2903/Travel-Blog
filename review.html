@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Page</title>
+    <style>
+        /* Global styles for body */
+        body {
+            font-family: 'Times New Roman', serif;
+            -webkit-font-smoothing: antialiased; /* For WebKit-based browsers like Chrome and Safari */
+            -moz-osx-font-smoothing: grayscale;  /* For Firefox on Mac */
+            background-image: url('images/bch1.jpg'); /* Set background image */
+            background-size: cover; /* Ensure the image covers the entire background */
+            background-position: center; /* Center the image */
+            background-attachment: fixed; /* Make the background fixed while scrolling */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 100vh;
+        }
+
+        /* Reviews container layout */
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px; /* Adjusted gap for better spacing */
+            justify-items: center;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* Review card styles */
+        .review-card {
+            perspective: 1000px;
+            width: 280px; /* Slightly increased size of the cards */
+            height: 350px; /* Slightly increased height of the cards */
+            margin: 10px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .review-card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Front and back of the card */
+        .card-face {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Front of the card */
+        .card-front {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Back of the card */
+        .card-back {
+            background-color: #009688;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: normal; /* Adjusted font weight for readability */
+            font-style: italic; /* Added italic for better readability */
+        }
+
+        .card-back p {
+            margin: 10px 0;
+        }
+
+        .card-back p strong {
+            font-size: 18px;
+            font-weight: bold; /* Bold for reviewer name */
+        }
+
+        /* Centering the Pavan card under the Manohar card */
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-items: center;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .review-card:nth-child(7) {
+            grid-column: span 3; /* Ensures the Pavan card takes the full width of the row */
+        }
+    </style>
+</head>
+<body>
+    <div class="reviews-container">
+        <!-- Review Card 1 -->
+        <div class="review-card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="images/andani1.jpg" alt="Andani Gowda M R">
+                </div>
+                <div class="card-face card-back">
+                    <p><strong>Andani Gowda M R</strong></p>
+                    <p>"Rafting in Dandeli was an exhilarating experience! The Kali River’s rapids were thrilling. I enjoyed the peaceful atmosphere, though afternoons can be a bit too hot. Highly recommend it for adventure lovers!"</p>
+                </div>
+            </div>
+        </div>
+        <!-- Review Card 2 -->
+        <div class="review-card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="images/patel.jpg" alt="Neerav Patel">
+                </div>
+                <div class="card-face card-back">
+                    <p><strong>Neerav Patel</strong></p>
+                    <p>"Gokarna’s beaches, especially OM Beach, were beautiful! Kudle Beach was perfect for relaxing. Loved the fresh seafood, although transport could be faster. A wonderful beach escape overall!"</p>
+                </div>
+            </div>
+        </div>
+        <!-- Review Card 3 -->
+        <div class="review-card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="images/ramitDP.jpg" alt="Ramit Shetty">
+                </div>
+                <div class="card-face card-back">
+                    <p><strong>Ramit Shetty</strong></p>
+                    <p>"The mangrove walk in Honnavar was so peaceful. The backwaters were serene, and the scenery was beautiful. A bit of a rough ride to get there, but once you arrive, it's all worth it."</p>
+                </div>
+            </div>
+        </div>
+        <!-- Review Card 4 -->
+        <div class="review-card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="images/muttuDP.jpg" alt="Muthuraj Unki">
+                </div>
+                <div class="card-face card-back">
+                    <p><strong>Muthuraj Unki</strong></p>
+                    <p>"Apsarkonda Falls was perfect for photography and relaxation. The lush greenery around the waterfall added to the experience. The rocky paths were a challenge, but the beauty was worth it!"</p>
+                </div>
+            </div>
+        </div>
+        <!-- Review Card 5 -->
+        <div class="review-card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="images/manu.jpg" alt="Manohar">
+                </div>
+                <div class="card-face card-back">
+                    <p><strong>Manohar</strong></p>
+                    <p>"Kudle Beach in Gokarna is an ideal place to unwind. The peaceful environment and fresh seafood were highlights. Transport could be a bit slow, but the peaceful beaches more than make up for it."</p>
+                </div>
+            </div>
+        </div>
+        <!-- Review Card 6 -->
+        <div class="review-card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="images/nandan.jpg" alt="Nandan">
+                </div>
+                <div class="card-face card-back">
+                    <p><strong>Nandan</strong></p>
+                    <p>"The mangrove tour in Honnavar was breathtaking. The beauty of the backwaters was incredible. The bumpy roads to get there were a little uncomfortable, but the experience was well worth it."</p>
+                </div>
+            </div>
+        </div>
+        <!-- Review Card 7 -->
+        <div class="review-card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <img src="images/pavan1.jpg" alt="Pavan">
+                </div>
+                <div class="card-face card-back">
+                    <p><strong>Pavan</strong></p>
+                    <p>"Mirjan Fort was a peaceful place to explore. The views from the fort were stunning, though it could use more informational signs or guides. A quiet and perfect spot to relax and learn about history!"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

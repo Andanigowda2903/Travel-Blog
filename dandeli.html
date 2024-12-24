@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dandeli Adventure - TravelSphere</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Full Header with Navigation -->
+    <header ng-class="{'scrolled': scrolled}">
+        <nav class="container">
+            <div class="logo">TravelSphere</div>
+            <div class="hamburger" ng-click="toggleMenu()" ng-class="{'active': menuActive}">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="nav-links" ng-class="{'active': menuActive}">
+                <li><a href="index.html" ng-click="smoothScroll('home')">Home</a></li>
+                <li><a href="index.html#stories" ng-click="smoothScroll('stories')">Stories</a></li>
+                <li><a href="index.html#photography" ng-click="smoothScroll('photography')">Photography</a></li>
+                <li><a href="index.html#itineraries" ng-click="smoothScroll('itineraries')">Itineraries</a></li>
+                <li><a href="review.html">Reviews</a></li>
+                <li><a href="index.html#contact" ng-click="smoothScroll('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dandeli Story Section -->
+    <section id="dandeli-story" class="background-image" style="background-image: url('images/rafting.jpg');">
+        <div class="container">
+            <h1>Unleash Adventure in Dandeli</h1>
+            <p><strong>The thrill of river rafting, kayaking, and boating on the Kali River in Dandeli. Known for its untamed beauty, Dandeli is the perfect destination for adventure seekers. The stunning landscapes and serene atmosphere offer an unforgettable escape into nature.</strong></p>
+            <p>The Kali River, surrounded by lush forests, provides an exciting backdrop for activities like rafting and kayaking, while the nearby crocodile park and Supa Dam add a touch of wildlife and serenity to your journey. Whether you're an adrenaline junkie or someone seeking peace, Dandeli offers a perfect blend of both.</p>
+        </div>
+    </section>
+
+    <!-- Places to Visit Section -->
+    <section id="places-to-visit">
+        <div class="container">
+            <h2>Places to Visit in Dandeli</h2>
+            <div class="places-grid">
+                <!-- Place 1: Kali River Water Sports -->
+                <div class="place-card">
+                    <div class="place-image" style="background-image: url('images/ramit.jpg');"></div>
+                    <div class="place-content">
+                        <h3>Kali River Water Sports</h3>
+                        <p>Experience the thrill of water sports on the Kali River, a prime location for river rafting, kayaking, and boating. The crystal-clear waters and surrounding lush forests create the perfect setting for an adrenaline-packed adventure.</p>
+                    </div>
+                </div>
+
+                <!-- Place 2: Kali Tiger Reserve -->
+                <div class="place-card">
+                    <div class="place-image" style="background-image: url('images/tiger.jpg');"></div>
+                    <div class="place-content">
+                        <h3>Kali Tiger Reserve</h3>
+                        <p>Home to tigers and other wildlife, the Kali Tiger Reserve offers a unique opportunity for nature lovers and wildlife enthusiasts. Take a safari tour through the dense forests to spot tigers, leopards, and a variety of bird species.</p>
+                    </div>
+                </div>
+
+                <!-- Place 3: Supa Dam -->
+                <div class="place-card">
+                    <div class="place-image" style="background-image: url('images/supa.jpg');"></div>
+                    <div class="place-content">
+                        <h3>Supa Dam</h3>
+                        <p>Visit the Supa Dam, a serene spot nestled amidst the Western Ghats. The tranquil waters and surrounding landscapes offer the perfect escape from the hustle and bustle of daily life. It's an ideal location for a peaceful retreat or a picnic with family and friends.</p>
+                    </div>
+                </div>
+
+                <!-- Place 4: Sathodi Falls -->
+                <div class="place-card">
+                    <div class="place-image" style="background-image: url('images/sathodi.jpg');"></div>
+                    <div class="place-content">
+                        <h3>Sathodi Falls</h3>
+                        <p>Sathodi Falls, often referred to as the "Niagara of Karnataka," is a breathtaking waterfall located amidst dense forests. The water cascades down from a height, creating a mesmerizing view that's perfect for nature lovers and photographers.</p>
+                    </div>
+                </div>
+
+                <!-- Place 5: Kali River Rafting -->
+                <div class="place-card">
+                    <div class="place-image" style="background-image: url('images/neerav.JPG');"></div>
+                    <div class="place-content">
+                        <h3>Kali River Rafting</h3>
+                        <p>Get your adrenaline pumping with an exciting rafting experience on the Kali River. Paddle through the rushing waters, navigate thrilling rapids, and enjoy a heart-pounding adventure surrounded by lush landscapes.</p>
+                    </div>
+                </div>
+
+                <!-- Place 6: Kali River Kayaking -->
+                <div class="place-card">
+                    <div class="place-image" style="background-image: url('images/andani.jpg');"></div>
+                    <div class="place-content">
+                        <h3>Kali River Kayaking</h3>
+                        <p>For a more peaceful yet thrilling adventure, kayaking on the Kali River offers a unique way to explore the river's calm waters. Paddle through the serene river, enjoying the peaceful surroundings and abundant wildlife.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

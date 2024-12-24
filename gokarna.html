@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dandeli Adventure - TravelSphere</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Full Header with Navigation -->
+    <header ng-class="{'scrolled': scrolled}">
+        <nav class="container">
+            <div class="logo">TravelSphere</div>
+            <div class="hamburger" ng-click="toggleMenu()" ng-class="{'active': menuActive}">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="nav-links" ng-class="{'active': menuActive}">
+                <li><a href="index.html" ng-click="smoothScroll('home')">Home</a></li>
+                <li><a href="index.html#stories" ng-click="smoothScroll('stories')">Stories</a></li>
+                <li><a href="index.html#photography" ng-click="smoothScroll('photography')">Photography</a></li>
+                <li><a href="index.html#itineraries" ng-click="smoothScroll('itineraries')">Itineraries</a></li>
+                <li><a href="review.html">Reviews</a></li>
+                <li><a href="index.html#contact" ng-click="smoothScroll('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dandeli Story Section -->
+    <section id="dandeli-story" class="background-image" style="background-image: url('images/backgo.jpeg');">
+        <div class="container">
+            <h1>Explore the Charm of Gokarna</h1> 
+            <p><strong>Immerse yourself in the unique allure of Gokarna, a coastal haven blending serene beaches and rich history. From the iconic Om Beach to the tranquil Kudle Beach and the historic Mirjan Fort, Gokarna offers an unforgettable experience for travelers seeking relaxation and exploration.</strong></p>
+        </div>
+    </section>
+
+    <!-- Places to Visit Section -->
+    <section id="places-to-visit">
+        <div class="container">
+            <h2>Places to Visit in Gokarna</h2>
+            <div class="places-grid">
+                <!-- Place 1: OM Beach -->
+                <div class="place-card">
+                    <div class="place-image" style="background-image: url('images/om.jpg');"></div>
+                    <div class="place-content">
+                        <h3>OM Beach</h3>
+                        <p>Discover the iconic Om Beach, named for its distinctive shape resembling the sacred 'Om' symbol. A favorite among travelers, this beach is perfect for sunbathing, swimming, and capturing stunning coastal views.</p>
+                    </div>
+                </div>
+
+                <!-- Place 2: Kudle Beach -->
+                <div class="place-card">
+                    <div class="place-image" style="background-image: url('images/kudle.jpg');"></div>
+                    <div class="place-content">
+                        <h3>Kudle Beach</h3>
+                        <p>Relax at the serene Kudle Beach, a peaceful retreat known for its golden sands and calm waters. Ideal for unwinding and enjoying picturesque sunsets, it’s a must-visit for tranquility seekers.</p>
+                    </div>
+                </div>
+
+                <!-- Place 3: Mirjan Fort -->
+                <div class="place-card">
+                    <div class="place-image" style="background-image: url('images/Fort.jpg');"></div>
+                    <div class="place-content">
+                        <h3>Mirjan Fort</h3>
+                        <p>Step back in time at Mirjan Fort, a historic marvel surrounded by lush greenery. Explore its ancient architecture and immerse yourself in the stories of its glorious past.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="travelBlogApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelSphere</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+<body ng-controller="MainController">
+    <header ng-class="{'scrolled': scrolled}">
+        <nav class="container">
+            <div class="logo">TravelSphere</div>
+            <div class="hamburger" ng-click="toggleMenu()" ng-class="{'active': menuActive}">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="nav-links" ng-class="{'active': menuActive}">
+                <li><a href="#home" ng-click="smoothScroll('home')">Home</a></li>
+                <li><a href="#stories" ng-click="smoothScroll('stories')">Stories</a></li>
+                <li><a href="#photography" ng-click="smoothScroll('photography')">Photography</a></li>
+                <li><a href="#itineraries" ng-click="smoothScroll('itineraries')">Itineraries</a></li>
+                <li><a href="review.html">Reviews</a></li>
+                <li><a href="#contact" ng-click="smoothScroll('contact')">Contact</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">  
+            <div class="hero-content">  
+                <h1 data-aos="fade-down">Uncover Nature’s Treasures</h1>  
+                <p data-aos="fade-down" data-aos-delay="200">Embark on adventures with us as we explore serene backwaters, enchanting forests, pristine beaches, and historic marvels. Discover the hidden gems of Honnavar, Gokarna, and beyond.</p>  
+                <a href="#stories" class="cta-button" data-aos="fade-up" data-aos-delay="400" ng-click="smoothScroll('stories')">Read Our Stories</a>  
+            </div>  
+        </section>  
+        
+
+        <section id="stories" class="featured-stories">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-down">Featured Stories</h2>
+                <div class="stories-grid">
+            
+                    <!-- Story 1: Dandeli -->
+                    <div class="story-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="story-image" style="background-image: url('images/DD.jpg');"></div>
+                        <div class="story-content">
+                            <h3>Unleash Adventure in Dandeli</h3>
+                            <p>Discover the thrill of river rafting, kayaking, and serene escapes in Dandeli.</p>
+                            <a href="dandeli.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+            
+                    <!-- Story 2: Gokarna -->
+                    <div class="story-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="story-image" style="background-image: url('images/gg.jpg');"></div>
+                        <div class="story-content">
+                            <h3>Tranquil Tides: A Beach Odyssey in Gokarna</h3>
+                            <p>Relax on serene beaches and explore the historic beauty of Gokarna.</p>
+                            <a href="gokarna.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+            
+                    <!-- Story 3: Honnavar -->
+                    <div class="story-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="story-image" style="background-image: url('images/honna.jpg');"></div>
+                        <div class="story-content">
+                            <h3>Lush Escapes: Honnavar’s Mangrove Wonderland</h3>
+                            <p>Explore the serene backwaters and the enchanting mangrove forests of Honnavar.</p>
+                            <a href="honnavar.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+        </section>
+
+        <section id="photography" class="photography">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-down">Photography</h2>
+                <div class="photo-grid">
+                    <div class="photo-item" data-aos="zoom-in" data-aos-delay="{{$index * 100}}" ng-repeat="photo in photos">
+                        <img ng-src="{{photo.url}}" alt="{{photo.title}}">
+                        <div class="photo-overlay">
+                            <h3 class="photo-title">{{photo.title}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="itineraries" class="itineraries">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-down">Chronicles of Our Trip</h2>
+                <ul class="itinerary-list">
+                    <li class="itinerary-item" data-aos="fade-up" data-aos-delay="{{$index * 200}}" ng-repeat="itinerary in itineraries">
+                        <div class="itinerary-image" ng-style="{'background-image': 'url(' + itinerary.image + ')'}"></div>
+                        <div class="itinerary-content">
+                            <h3>{{itinerary.destination}}</h3>
+                            <p>{{itinerary.description}}</p>
+                            <div class="itinerary-details">
+                                <span><i class="fas fa-clock"></i> {{itinerary.duration}}</span>
+                                <span><i class="fas fa-calendar-alt"></i> {{itinerary.bestTime}}</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="newsletter" class="newsletter">
+            <div class="container">
+                <h2 data-aos="fade-down">Subscribe to Our Newsletter</h2>
+                <form class="newsletter-form" ng-submit="subscribeNewsletter()" data-aos="fade-up">
+                    <input type="email" ng-model="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p style="text-align:left;">TravelSphere is a travel blog that inspires adventure and explores the beauty of the world through captivating stories and stunning photography. Join us on our journey to uncover hidden gems and unforgettable experiences.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#stories">Stories</a></li>
+                        <li><a href="#photography">Photography</a></li>
+                        <li><a href="#itineraries">Itineraries</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <ul class="social-icons">
+                        <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-pinterest"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelSphere. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
