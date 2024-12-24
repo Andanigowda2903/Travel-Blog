@@ -1,7 +1,7 @@
 # Travel Blog
 # Travel Blog
 
-![Travel Blog Banner](images/andani.jpg "Welcome to Travel Blog")
+![Travel Blog Banner](images/.jpg "Welcome to Travel Blog")
 ## Overview
 
 **Travel Blog** is a modern and responsive template designed to captivate users with its engaging design and smooth interactivity. Built using AngularJS for dynamic content and Vanilla JavaScript for animations, this template is perfect for sharing travel experiences and stories.
